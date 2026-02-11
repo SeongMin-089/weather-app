@@ -59,7 +59,7 @@ function App() {
       backgroundPosition: 'center',
       }}>
       <div className="container">
-        <h1>***의 날씨앱</h1>
+        <h1>박성민의 날씨앱</h1>
         <div className="input-wrap">
           <input
             value={city}
