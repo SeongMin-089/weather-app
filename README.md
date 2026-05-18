@@ -1,16 +1,19 @@
-# React + Vite
+## 프로젝트 설명
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React를 활용해 제작한 간단한 날씨 검색 앱입니다.
 
-Currently, two official plugins are available:
+사용자가 도시 이름을 입력하면 OpenWeather API를 통해 해당 도시의 현재 날씨 정보를 조회할 수 있도록 구현했습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+도시명을 입력하면 먼저 Geocoding API로 위도와 경도를 조회하고, 조회된 좌표를 기준으로 현재 날씨 데이터를 가져오는 방식으로 API 요청 흐름을 구성했습니다.
 
-## React Compiler
+## 주요 기능
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 도시 이름 검색 기능
+- Enter 키를 통한 검색 실행
+- OpenWeather Geocoding API 기반 위도/경도 조회
+- 위도/경도 값을 이용한 현재 날씨 정보 조회
+- 도시명, 날씨 아이콘, 날씨 설명, 현재 기온, 습도 출력
+- 날씨 정보를 불러오는 동안 로딩 문구 표시
+- 도시 검색 실패 및 API 요청 오류 처리
+- 날씨 코드에 따른 배경 이미지 변경
+- `useRef`와 `useEffect`를 활용한 input 자동 포커스
